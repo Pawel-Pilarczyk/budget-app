@@ -1,30 +1,70 @@
 #header {
   display: flex;
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: #4949ff; }
+  background: #7474ff; }
   #header > h2 {
-    margin: 0; }
+    margin: 0;
+    font-size: 1rem; }
   #header > div > button {
-    width: 100px;
+    width: 75px;
+    font-size: 0.75rem;
     height: 35px;
-    margin-left: 20px;
     border-radius: 20px;
     border: 2px solid #999999; }
     #header > div > button:hover {
       border: 2px solid white; }
-  #header > div > #add-income {
-    background-color: #07ce00; }
-  #header > div > #add-expense {
+  #header > div > #add-income-btn {
+    background-color: #07ce00;
+    margin-right: 10px; }
+  #header > div > #add-expense-btn {
     background-color: #ff3535; }
 
 #root {
-  width: 60%;
+  width: 100%;
   height: 100vh;
-  box-shadow: 13px 14px 25px 1px rgba(0, 0, 0, 0.67);
   margin: 0 auto; }
+
+#menu {
+  display: none;
+  width: 100%;
+  background: lightgray;
+  z-index: 2;
+  position: absolute; }
+  #menu > ul {
+    margin: 0;
+    padding-left: 0;
+    padding-top: 5vh;
+    padding-bottom: 8vh;
+    list-style: none;
+    text-align: center; }
+    #menu > ul > li {
+      padding-top: 3vh;
+      padding-bottom: 2vh;
+      margin: 3% 10%;
+      font-size: 1.5rem;
+      border: 2px solid #4d4d4d; }
+      #menu > ul > li:hover {
+        border-bottom: 2px solid red; }
+
+.pop-up {
+  width: 80vw;
+  height: 50vh;
+  margin: 10vh auto;
+  border: 2px solid black;
+  border-radius: 25px; }
+  .pop-up > form {
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column; }
+    .pop-up > form > input {
+      width: 80%;
+      margin: 20px auto; }
+    .pop-up > form > select {
+      width: 60%;
+      margin: 0 auto; }
 
 /*# sourceMappingURL=index.css.map */
