@@ -1,3 +1,30 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #4949ff; }
+  #header > h2 {
+    margin: 0; }
+  #header > div > button {
+    width: 100px;
+    height: 35px;
+    margin-left: 20px;
+    border-radius: 20px;
+    border: 2px solid #999999; }
+    #header > div > button:hover {
+      border: 2px solid white; }
+  #header > div > #add-income {
+    background-color: #07ce00; }
+  #header > div > #add-expense {
+    background-color: #ff3535; }
 
+#root {
+  width: 60%;
+  height: 100vh;
+  box-shadow: 13px 14px 25px 1px rgba(0, 0, 0, 0.67);
+  margin: 0 auto; }
 
 /*# sourceMappingURL=index.css.map */

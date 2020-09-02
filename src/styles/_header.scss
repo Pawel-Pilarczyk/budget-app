@@ -1,0 +1,36 @@
+#header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgb(73, 73, 255);
+
+    >h2{
+        margin:0;
+    }
+
+    >div 
+    {
+        >button{
+            width: 100px;
+            height: 35px;
+            margin-left: 20px;
+            border-radius:20px;
+            border: 2px solid rgb(153, 153, 153);
+            &:hover{
+                border: 2px solid white;
+            }
+        }
+
+        >#add-income{
+            background-color: rgb(7, 206, 0);   
+        }
+        >#add-expense{
+            background-color: rgb(255, 53, 53);   
+        }
+    }
+
+    
+}
