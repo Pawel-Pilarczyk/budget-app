@@ -3,48 +3,66 @@ import Header from './Header'
 import Menu from './Menu';
 import AddIncome from './AddIncome';
 import AddExpense from './AddExpense';
+import { render } from '@testing-library/react';
 
-function App() {
-  let menuHidden = true;
 
-  function hideMenu(){
-    if(menuHidden){
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      Incomes: [],
+      Expenses:[],
+    };
+
+    this.hideMenu = this.hideMenu.bind(this);
+    this.hideAddIncome = this.hideAddIncome.bind(this);
+    this.hideAddExpense = this.hideAddExpense.bind(this);
+  }
+
+  menuHidden = true;
+  addIncomeHidden = true;
+  addExpenseHidden = true;
+  
+hideMenu(){
+    if(this.menuHidden){
       document.getElementById('menu').style.display ="block";
-      menuHidden = false;
+      this.menuHidden = false;
     }else{
       document.getElementById('menu').style.display ="none";
-      menuHidden = true;
+      this.menuHidden = true;
     }
-  }
-
-  function hideAddIncome(){
-    if(menuHidden){
+  };
+  
+  hideAddIncome(){
+    if(this.addIncomeHidden){
       document.getElementById('add-income').style.display ="block";
-      menuHidden = false;
+      this.addIncomeHidden = false;
     }else{
       document.getElementById('add-income').style.display ="none";
-      menuHidden = true;
+      this.addIncomeHidden = true;
     }
   }
-
-  function hideAddExpense(){
-    if(menuHidden){
+  
+  hideAddExpense(){
+    if(this.addExpenseHidden){
       document.getElementById('add-expense').style.display ="block";
-      menuHidden = false;
+      this.addExpenseHidden = false;
     }else{
       document.getElementById('add-expense').style.display ="none";
-      menuHidden = true;
+      this.addExpenseHidden = true;
     }
+  };
+  render(){
+    return (
+      <div className="App">
+        <Header menuOption ={this.hideMenu} addIncomePopUp={this.hideAddIncome} addExpensePopUp={this.hideAddExpense}/>
+        <Menu/>
+        <AddIncome />
+        <AddExpense/>
+      </div>
+    );
   }
-
-  return (
-    <div className="App">
-      <Header menuOption ={hideMenu} addIncomePopUp={hideAddIncome} addExpensePopUp={hideAddExpense}/>
-      <Menu/>
-      <AddIncome />
-      <AddExpense/>
-    </div>
-  );
+  
 }
 
 export default App;
