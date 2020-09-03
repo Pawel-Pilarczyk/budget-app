@@ -54,9 +54,12 @@
   display: none;
   width: 80vw;
   height: 50vh;
-  margin: 10vh auto;
+  margin-top: 20px;
+  margin-left: 10vw;
   border: 2px solid black;
-  border-radius: 25px; }
+  border-radius: 25px;
+  position: absolute;
+  background-color: white; }
   .pop-up > form {
     padding-top: 20%;
     display: flex;
@@ -67,5 +70,34 @@
     .pop-up > form > select {
       width: 60%;
       margin: 0 auto; }
+
+#list h1 {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: black 1px solid; }
+#list > div {
+  display: flex;
+  justify-content: space-evenly; }
+  #list > div > .partial-list {
+    width: 45%;
+    text-align: center; }
+    #list > div > .partial-list h2 {
+      margin: 10px; }
+    #list > div > .partial-list > ul {
+      margin: 0;
+      padding-left: 0;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      list-style: none;
+      border-bottom: 2px solid black; }
+  #list > div > #incomes-list {
+    background-color: rgba(110, 255, 110, 0.404); }
+    #list > div > #incomes-list > ul {
+      background-color: rgba(110, 255, 110, 0.404); }
+  #list > div > #expenses-list {
+    background-color: rgba(255, 116, 116, 0.404); }
+    #list > div > #expenses-list > ul {
+      background-color: rgba(255, 116, 116, 0.404); }
 
 /*# sourceMappingURL=index.css.map */

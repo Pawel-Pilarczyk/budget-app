@@ -2,9 +2,12 @@
     display: none;
     width: 80vw;
     height: 50vh;
-    margin: 10vh auto;
+    margin-top: 20px;
+    margin-left:10vw;
     border: 2px solid black;
     border-radius: 25px;
+    position: absolute;
+    background-color:white;
     
     >form{
         padding-top:20%;

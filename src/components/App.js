@@ -120,7 +120,7 @@ class App extends React.Component {
         <Menu/>
         <AddIncome addIncomeFunction={this.addNewIncome}/>
         <AddExpense addExpenseFunction={this.addNewExpense}/>
-        <List expensesList={this.state.Expenses} incomesList={this.state.Incomes} balance={this.balance}/>
+        <List expensesList={this.state.Expenses} incomesList={this.state.Incomes} balance={this.balance} totalIncomes={this.totalIncomes} totalExpenses={this.totalExpenses}/>
       </div>
     );
   }
