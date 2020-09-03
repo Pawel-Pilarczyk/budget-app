@@ -4,7 +4,7 @@ const AddExpense = (props)=>{
   return(
       <div id="add-expense" className="pop-up">
         <form onSubmit={props.addExpenseFunction}>
-            <input type="number" id="ammountExpense" required></input>
+            <input type="number" step="0.01" min='0'  id="ammountExpense" required></input>
             <select id="typeOfExpense" name="typeOfExpense" required>
                 <option value="Rent">Rent</option>
                 <option value="Bills">Bills</option>

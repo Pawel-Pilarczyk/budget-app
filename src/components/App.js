@@ -3,34 +3,35 @@ import Header from './Header'
 import Menu from './Menu';
 import AddIncome from './AddIncome';
 import AddExpense from './AddExpense';
-import { render } from '@testing-library/react';
+import List from './List';
 
 const date = new Date;
 
+// Creating new object which will be pushed into State -> Incomes
 class NewIncome{
   constructor(ammount,type){
     this.ammount = ammount;
     this.type = type;
-    this.date = `${date.getDate()}:${date.getMonth()}:${date.getFullYear()}`;
+    this.date = `0${date.getDate()}:0${date.getMonth()}:${date.getFullYear()}`;
   }
 };
-
+// Creating new object which will be pushed into State -> Expenses
 class NewExpense{
   constructor(ammount,type){
     this.ammount = ammount;
     this.type = type;
-    this.date = `${date.getDate()}:${date.getMonth()}:${date.getFullYear()}`;
+    this.date = `0${date.getDate()}:0${date.getMonth()}:${date.getFullYear()}`;
   }
 };
-
+//Creating new App component
 class App extends React.Component {
-  constructor(){
+  constructor(){ 
     super();
-    this.state = {
+    this.state = {// Creting statest that will be passed down to components to be displayed
       Expenses: [],
       Incomes: [],
     };
-
+    //binding functions
     this.hideMenu = this.hideMenu.bind(this);
     this.hideAddIncome = this.hideAddIncome.bind(this);
     this.hideAddExpense = this.hideAddExpense.bind(this);
@@ -38,12 +39,16 @@ class App extends React.Component {
     this.addNewExpense = this.addNewExpense.bind(this);
   
   }
-
+  // variables which will be responsible about displaying perticular parts of the APP
   menuHidden = true;
   addIncomeHidden = true;
   addExpenseHidden = true;
 
-  
+  //Variables resposnsible for holding data about total Incomes/Expenses/Budget
+  totalIncomes = 0;
+  totalExpenses = 0;
+  balance = 0;
+
   hideMenu(){
       if(this.menuHidden){
         document.getElementById('menu').style.display ="block";
@@ -83,6 +88,12 @@ class App extends React.Component {
     this.setState({Incomes:[...this.state.Incomes, newIncome]});
 
     document.getElementById('ammount').value = "";
+
+    document.getElementById('add-income').style.display ="none";
+    this.addIncomeHidden = true;
+
+    this.totalIncomes += parseFloat(newAmmount);
+    this.balance = this.totalIncomes - this.totalExpenses;
   };
 
   addNewExpense(e){
@@ -94,6 +105,12 @@ class App extends React.Component {
     this.setState({Expenses:[...this.state.Expenses, newExpense]});
 
     document.getElementById('ammountExpense').value = "";
+
+    document.getElementById('add-expense').style.display ="none";
+    this.addExpenseHidden = true;
+
+    this.totalExpenses += parseFloat(newAmmountEx);
+    this.balance = this.totalIncomes - this.totalExpenses;
   };
 
   render(){
@@ -103,6 +120,7 @@ class App extends React.Component {
         <Menu/>
         <AddIncome addIncomeFunction={this.addNewIncome}/>
         <AddExpense addExpenseFunction={this.addNewExpense}/>
+        <List expensesList={this.state.Expenses} incomesList={this.state.Incomes} balance={this.balance}/>
       </div>
     );
   }

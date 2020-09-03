@@ -4,7 +4,7 @@ const AddIncome = (props)=>{
   return(
       <div id="add-income" className="pop-up">
         <form onSubmit={props.addIncomeFunction}>
-            <input type="number" id="ammount" required></input>
+            <input type="number" step="0.01" min='0' id="ammount" required></input>
             <select id="typeOfIncome" name="typeOfIncome" required>
                 <option value="Work">Work</option>
                 <option value="Side Hussle">Side Hussle</option>
