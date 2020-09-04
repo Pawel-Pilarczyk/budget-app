@@ -3,7 +3,7 @@ import React from 'react';
 const Overview = (props) =>{
     return(
         <div id="overview">
-            <h1>Blance: {props.balance}$</h1>
+            <h1>Balance: {props.balance}$</h1>
             <div>
                 <div id="incomes-OV" className="partial-list">
                     <h2>Income</h2>

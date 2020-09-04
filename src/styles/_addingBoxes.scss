@@ -1,7 +1,7 @@
 .pop-up{
     display: none;
     width: 80vw;
-    height: 35vh;
+    height: 350px;
     margin-top: 20px;
     margin-left:10vw;
     border: 2px solid black;
@@ -34,5 +34,12 @@
             margin: 0 auto;
         }
 
+    }
+}
+
+@media (min-width:1024px) and (orientation: landscape){
+    .pop-up{
+         width: 35vw;
+         margin-left:32.5vw;
     }
 }

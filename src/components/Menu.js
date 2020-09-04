@@ -5,7 +5,7 @@ import Overview from './Overview';
 const Menu = () =>{
     let overviewHidden = false;
     let listHidden = false;
-    let chartsHidden = false;
+    let chartsHidden = true;
 
     function hideOverview(){
         if(overviewHidden){

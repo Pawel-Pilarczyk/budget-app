@@ -4,3 +4,34 @@
 @import 'addingBoxes';
 @import 'list';
 @import 'overview';
+
+#content{
+    >#charts{
+        display: none;
+        .chartDiv{
+            width: 450px;
+            height: 350px;
+            margin: 0 auto;
+        }
+        h2{
+            margin-top:50px;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width:1024px) and (orientation: landscape){
+    #content{
+        width: 80%;
+        margin:0 auto;
+        display: flex;
+        justify-content: space-between;
+        >div{
+            width: 45%;
+        }
+        >#charts{
+            display: block;
+            width: 45%;
+        }
+    }
+}

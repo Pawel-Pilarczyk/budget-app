@@ -97,7 +97,8 @@ const Chart = (props) =>{
 
     return(
         <div id="charts">
-            <div id="barChartIncome">
+            <div id="barChartIncome" className="chartDiv">
+                <h2>Bar Chart Income</h2>
                 <Bar
                     data={chartDataIncome}
                     width={150}
@@ -114,7 +115,8 @@ const Chart = (props) =>{
                     }}
                 /> 
             </div>
-            <div id="barChartExpense">
+            <div id="barChartExpense" className="chartDiv">
+                 <h2>Bar Chart Expenses</h2>
                 <Bar
                     data={chartDataExpenses}
                     width={150}
@@ -131,7 +133,8 @@ const Chart = (props) =>{
                     }}
                 /> 
             </div> 
-            <div id="pieChartIncome">
+            <div id="pieChartIncome" className="chartDiv">
+                <h2>Pie Chart Income</h2>
                 <Pie
                     data={chartDataIncome}
                     width={150}
@@ -141,7 +144,8 @@ const Chart = (props) =>{
                     }}
                 /> 
             </div>
-            <div id="pieChartExpenses">
+            <div id="pieChartExpenses" className="chartDiv">
+                <h2>Pie Chart Expenses</h2>
                 <Pie
                     data={chartDataExpenses}
                     width={150}

@@ -122,9 +122,13 @@ class App extends React.Component {
         <Menu/>
         <AddIncome addIncomeFunction={this.addNewIncome} closeWindow={this.hideAddIncome}/>
         <AddExpense addExpenseFunction={this.addNewExpense} closeWindow={this.hideAddExpense}/>
-        <Overview balance={this.balance} totalIncomes={this.totalIncomes} totalExpenses={this.totalExpenses}></Overview>
-        <List expensesList={this.state.Expenses} incomesList={this.state.Incomes}/>
-        <Chart income={this.state.Incomes} expenses={this.state.Expenses}/>
+        <div id="content">
+          <div>
+            <Overview balance={this.balance} totalIncomes={this.totalIncomes} totalExpenses={this.totalExpenses}></Overview>
+            <List expensesList={this.state.Expenses} incomesList={this.state.Incomes}/>
+          </div>
+          <Chart income={this.state.Incomes} expenses={this.state.Expenses}/>
+        </div>
       </div>
     );
   }

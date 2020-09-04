@@ -33,6 +33,22 @@
             background-color: rgb(255, 53, 53);   
         }
     }
+}
 
-    
+@media (min-width:1024px) and (orientation: landscape){
+    #header{
+        h2{
+            font-size:2rem;
+        }
+        >button{
+            display: none;
+        }
+        >div{
+            >button{
+                width: 120px;
+                height: 50px;
+            }
+        }
+    }
+
 }
