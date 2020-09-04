@@ -20,12 +20,34 @@ const Chart = (props) =>{
         }else if(x.type == "other"){
             incomeOther+= parseFloat(x.ammount);
         }
-    })
+    });
+
+    let expenseRent = 0;
+    let expenseBills = 0;
+    let expenseCar = 0;
+    let expenseFood = 0;
+    let expeseEO = 0;
+    let expenseEntert = 0;
+    props.expenses.map(x  => {
+        if(x.type == "Rent"){
+            expenseRent+= parseFloat(x.ammount);
+        }else if(x.type == "Bills"){
+            expenseBills+= parseFloat(x.ammount);
+        }else if(x.type == "Car"){
+            expenseCar+= parseFloat(x.ammount);
+        }else if(x.type == "Food"){
+            expenseFood+= parseFloat(x.ammount);
+        }else if(x.type == "Eating Out"){
+            expeseEO+= parseFloat(x.ammount);
+        }else if(x.type == "Entertainment"){
+            expenseEntert+= parseFloat(x.ammount);
+        }
+    });
 
     const chartDataIncome = {
         labels:['Work','Side Hussle','Bonus','Investment','Other'],
         datasets: [{
-            label: '# of Votes',
+            label: '$ Ammounts of income',
             data: [incomeWork,incomeSideHussle,incomeBonus,incomeInvestment,incomeOther],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -50,8 +72,8 @@ const Chart = (props) =>{
     const chartDataExpenses = {
         labels:['Rent','Bills','Car','Food','Eating Out','Entertainment'],
         datasets: [{
-            label: '# of Votes',
-            //data: labels,
+            label: '$ Ammount of expenses',
+            data: [expenseRent,expenseBills,expenseCar,expenseFood,expeseEO,expenseEntert],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -74,23 +96,63 @@ const Chart = (props) =>{
 
 
     return(
-        <div>
-            <Bar
-                data={chartDataIncome}
-                width={150}
-                height={250}
-                options={{ 
-                    maintainAspectRatio: false,
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                 beginAtZero: true
-                            }
-                        }]
-                    }
-                }}
-            />       
+        <div id="charts">
+            <div id="barChartIncome">
+                <Bar
+                    data={chartDataIncome}
+                    width={150}
+                    height={200}
+                    options={{ 
+                        maintainAspectRatio: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }}
+                /> 
+            </div>
+            <div id="barChartExpense">
+                <Bar
+                    data={chartDataExpenses}
+                    width={150}
+                    height={200}
+                    options={{ 
+                        maintainAspectRatio: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }}
+                /> 
+            </div> 
+            <div id="pieChartIncome">
+                <Pie
+                    data={chartDataIncome}
+                    width={150}
+                    height={200}
+                    options={{ 
+                        maintainAspectRatio: false,
+                    }}
+                /> 
+            </div>
+            <div id="pieChartExpenses">
+                <Pie
+                    data={chartDataExpenses}
+                    width={150}
+                    height={200}
+                    options={{ 
+                        maintainAspectRatio: false,
+                    }}
+                /> 
+            </div>
         </div>
+        
     )
 }
 export default Chart;

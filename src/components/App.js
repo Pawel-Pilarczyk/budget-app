@@ -5,6 +5,7 @@ import AddIncome from './AddIncome';
 import AddExpense from './AddExpense';
 import List from './List';
 import Chart from './Charts';
+import Overview from './Overview';
 
 const date = new Date;
 
@@ -119,10 +120,11 @@ class App extends React.Component {
       <div className="App">
         <Header menuOption ={this.hideMenu} addIncomePopUp={this.hideAddIncome} addExpensePopUp={this.hideAddExpense}/>
         <Menu/>
-        <AddIncome addIncomeFunction={this.addNewIncome}/>
-        <AddExpense addExpenseFunction={this.addNewExpense}/>
-        <List expensesList={this.state.Expenses} incomesList={this.state.Incomes} balance={this.balance} totalIncomes={this.totalIncomes} totalExpenses={this.totalExpenses}/>
-        <Chart income={this.state.Incomes} expenses={this.state.expenses} test={[1,2,3,3,4]}/>
+        <AddIncome addIncomeFunction={this.addNewIncome} closeWindow={this.hideAddIncome}/>
+        <AddExpense addExpenseFunction={this.addNewExpense} closeWindow={this.hideAddExpense}/>
+        <Overview balance={this.balance} totalIncomes={this.totalIncomes} totalExpenses={this.totalExpenses}></Overview>
+        <List expensesList={this.state.Expenses} incomesList={this.state.Incomes}/>
+        <Chart income={this.state.Incomes} expenses={this.state.Expenses}/>
       </div>
     );
   }

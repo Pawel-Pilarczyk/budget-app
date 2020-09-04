@@ -1,28 +1,15 @@
 #menu{
     display: none;
     width: 100%;
-    background: rgb(211, 211, 211);
+    background: rgb(87, 69, 255);
     z-index: 2;
     position: absolute;
 
-    >ul{
-        margin: 0;
-        padding-left: 0;
-        padding-top: 5vh;
-        padding-bottom: 8vh;
-        list-style: none;
-        text-align: center;
-
-        >li{
-            padding-top: 3vh;
-            padding-bottom: 2vh;
-            margin: 3% 10%;
-            font-size: 1.5rem;
-            border: 2px solid rgb(77, 77, 77);
-
-            &:hover{
-                border-bottom: 2px solid red;
-            }
-        }
+    >button{
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+        height:45px;
     }
+
 }

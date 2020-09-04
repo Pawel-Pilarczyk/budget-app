@@ -3,7 +3,9 @@ import React from 'react';
 const AddExpense = (props)=>{
   return(
       <div id="add-expense" className="pop-up">
-        <form onSubmit={props.addExpenseFunction}>
+        <button className="closeWindow" onClick={props.closeWindow}>X</button>
+        <h2>Add Expense</h2>
+        <form onSubmit={props.addExpenseFunction}>           
             <input type="number" step="0.01" min='0'  id="ammountExpense" required></input>
             <select id="typeOfExpense" name="typeOfExpense" required>
                 <option value="Rent">Rent</option>

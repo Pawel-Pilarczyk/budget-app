@@ -31,37 +31,34 @@
 #menu {
   display: none;
   width: 100%;
-  background: lightgray;
+  background: #5745ff;
   z-index: 2;
   position: absolute; }
-  #menu > ul {
-    margin: 0;
-    padding-left: 0;
-    padding-top: 5vh;
-    padding-bottom: 8vh;
-    list-style: none;
-    text-align: center; }
-    #menu > ul > li {
-      padding-top: 3vh;
-      padding-bottom: 2vh;
-      margin: 3% 10%;
-      font-size: 1.5rem;
-      border: 2px solid #4d4d4d; }
-      #menu > ul > li:hover {
-        border-bottom: 2px solid red; }
+  #menu > button {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 45px; }
 
 .pop-up {
   display: none;
   width: 80vw;
-  height: 50vh;
+  height: 35vh;
   margin-top: 20px;
   margin-left: 10vw;
   border: 2px solid black;
   border-radius: 25px;
   position: absolute;
   background-color: white; }
+  .pop-up > button {
+    width: 25px;
+    margin-top: 10px;
+    margin-left: 90%; }
+  .pop-up h2 {
+    text-align: center;
+    margin: 0 auto; }
   .pop-up > form {
-    padding-top: 20%;
+    padding-top: 5%;
     display: flex;
     flex-direction: column; }
     .pop-up > form > input {
@@ -99,5 +96,23 @@
     background-color: rgba(255, 116, 116, 0.404); }
     #list > div > #expenses-list > ul {
       background-color: rgba(255, 116, 116, 0.404); }
+
+#overview h1 {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: black 1px solid; }
+#overview > div {
+  display: flex;
+  justify-content: space-evenly; }
+  #overview > div > .partial-list {
+    width: 45%;
+    text-align: center; }
+    #overview > div > .partial-list h2 {
+      margin: 10px; }
+  #overview > div > #incomes-OV {
+    background-color: rgba(110, 255, 110, 0.404); }
+  #overview > div > #expenses-OV {
+    background-color: rgba(255, 116, 116, 0.404); }
 
 /*# sourceMappingURL=index.css.map */
